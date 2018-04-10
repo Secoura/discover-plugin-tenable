@@ -1,6 +1,7 @@
 {
   "name": "Discover Plugin for Tenable",
   "description": "Discover Plugin for Tenable",
+  "version": "0.1.0",
   "scripts": [
     {
       "type": "collector",
