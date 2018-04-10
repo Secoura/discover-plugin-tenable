@@ -1,0 +1,16 @@
+{
+  "name": "Discover Plugin for Tenable",
+  "description": "Discover Plugin for Tenable",
+  "scripts": [
+    {
+      "type": "collector",
+      "source_name": "tenable-nessus",
+      "path": "./bin/nessus-collector.js"
+    },
+    {
+      "type": "collector",
+      "source_name": "tenable-sc",
+      "path": "./bin/securitycenter-collector.js"
+    }
+  ]
+}
