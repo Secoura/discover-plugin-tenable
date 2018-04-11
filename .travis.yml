@@ -1,0 +1,21 @@
+sudo: false
+language: node_js
+node_js:
+- '6'
+
+cache:
+  yarn: true
+
+script:
+- npm run build
+- npm run package
+
+deploy:
+  provider: releases
+  api_key:
+    secure: vITtmZwvwRwSwsROJ7HXKFbZEWdwnbqterzAtbJB7d0658o8Vn8+SYkkDZS+ikqeLjr0Q3sUZOiEj4A4nw+GBzYuF2UD8ZUjLh0aOFLVmMFj5oEjsUbw/K8z9CWhdkCBgmXEYH+lKirEEBLiyWTp0yDPO2KsPhuH5ytUJ0XP6EaTBwVK7UzC2R9D04poEJqBfcSmut52orYXqa0wTi9kpVNRNLVSNVpSJCSo/PksJ+hW8Kfr+ZHpldM6Doxy3LxYddBKlnyWFEGpxqL89p+OY+DXv81zxfIHpg4tAxAUnFMgZ3dufKn1IoSBxa8crR29Vnek2mcVnOKJnLQVaGL576Or2vaDIPLFM7o3MplXVRuPefiP31j2Z+VkSLbcO0r1NhI8OGBjSCzK8p08wHZV7t35Z+v4piy3x47tSNsIxYL/Q1cS2/MzM0Gco6SIWQ4u2twByXg6m8lB7xjKKJtE5DJQc2HXruwL9woaO3X43p05nbNxvOy8bvK3SDE70KheRDUvCFkbWwQNWOq4wgh6Chx8zCaQ1/8aRUisWFnxlqkPPGdb7Z2QlN+AxFUMc1amkLoEDJhYphYgFA53o0Ginkzsj8IPnCkUQ5fbc2tkbpTaZpjGMomf099DXdCfye49m+abxABHet3YzQ6WN+aHRbhuXKt9236zL7DIca9G4jw=
+  file_glob: true
+  file: "*.zip"
+  skip_cleanup: true
+  on:
+    tags: true
