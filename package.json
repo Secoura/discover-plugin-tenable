@@ -4,7 +4,8 @@
   "description": "This plugin is used to retrieve data from Tenable applications, mainly Nessus and SecurityCenter for ingress into the Discover application.",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -c && copyfiles -f src/plugin.json dist",
+    "build": "rollup -c",
+    "package": "node internals/package.js",
     "watch": "rollup -c -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,7 +20,10 @@
   "homepage": "https://github.com/Secoura/discover-plugin-tenable#readme",
   "devDependencies": {
     "axios": "^0.18.0",
+    "commander": "^2.15.1",
     "copyfiles": "^2.0.0",
+    "delay": "^2.0.0",
+    "node-zip": "^1.1.1",
     "npm-run-all": "^4.1.2",
     "rollup": "^0.57.1",
     "rollup-plugin-commonjs": "^9.1.0",
@@ -29,6 +33,8 @@
     "rollup-plugin-node-globals": "^1.2.0",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-shebang": "^0.1.4",
-    "rollup-plugin-uglify": "^3.0.0"
+    "rollup-plugin-uglify": "^3.0.0",
+    "sprintf-js": "^1.1.1",
+    "xml2js": "^0.4.19"
   }
 }

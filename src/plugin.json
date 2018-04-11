@@ -2,16 +2,20 @@
   "name": "Discover Plugin for Tenable",
   "description": "Discover Plugin for Tenable",
   "version": "0.1.0",
+  "requires": {
+    "nodejs": "*"
+  },
   "scripts": [
     {
       "type": "collector",
       "source_name": "tenable-nessus",
+      "line_breaker": "--DISCOVER_END_OF_EVENT--\r\n",
       "path": "./bin/nessus-collector.js"
     },
     {
       "type": "collector",
       "source_name": "tenable-sc",
-      "path": "./bin/securitycenter-collector.js"
+      "path": "./bin/sc-collector.js"
     }
   ]
 }

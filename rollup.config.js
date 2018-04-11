@@ -1,7 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import builtins from 'rollup-plugin-node-builtins';
-import globals from 'rollup-plugin-node-globals';
 import json from 'rollup-plugin-json';
 import shebang from 'rollup-plugin-shebang';
 import uglify from 'rollup-plugin-uglify';
@@ -20,15 +19,12 @@ function defaultRollupConfig(entryPath, outputPath) {
 		plugins: [
 			shebang(), // adds unix-style shebang
 			resolve({
-        module: true,
-        jsnext: true,
-        main: true
+				browser: false,
 			}), // tells Rollup how to resolve node_modules
 			commonjs({
       	include: 'node_modules/**'
 			}), // converts to ES modules
 			builtins(), // enable builtins
-			globals(), // enable globals
 			json(), // parses JSON package.json files
 			production && uglify(), // minify, but only in production
 			executable() // sets file to be executable

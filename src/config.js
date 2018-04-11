@@ -8,9 +8,7 @@ if (typeof configData != 'undefined') {
 }
 
 if (typeof config == 'undefined') {
-  config = {
-    "foo": "me",
-  };
+  config = null;
 }
 
 export default config;
