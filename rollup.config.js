@@ -22,7 +22,7 @@ function defaultRollupConfig(entryPath, outputPath) {
 				browser: false,
 			}), // tells Rollup how to resolve node_modules
 			commonjs({
-      	include: 'node_modules/**'
+				include: 'node_modules/**'
 			}), // converts to ES modules
 			builtins(), // enable builtins
 			json(), // parses JSON package.json files
