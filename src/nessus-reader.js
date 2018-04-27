@@ -73,6 +73,7 @@ class NessusReader {
                     const severityID = this._extractProperty('severity', item);
                     const pluginID = this._extractProperty('pluginID', item);
                     const pluginName = this._extractProperty('pluginName', item);
+                    const pluginOutput = item.plugin_output;
 
                     const cvss3BaseScore = item.cvss3_base_score;
                     const cvss3TemporalScore = item.cvss3_temporal_score;
@@ -94,10 +95,11 @@ class NessusReader {
                         "start_time": hostStart,
                         "end_time": hostEnd,
 
-                        "severityID": severityID,
+                        "severity_id": parseInt(severityID),
                         "severity": SeverityToString(severityID),
-                        "signature_id": pluginID,
-                        "signature": pluginName,
+                        "plugin_id": parseInt(pluginID),
+                        "plugin_name": pluginName,
+                        "plugin_output": pluginOutput,
 
                         "bid": bugtraqID,
                         "cve": cveID,
@@ -119,7 +121,7 @@ class NessusReader {
                         "dest_os": operatingSystem,
                         "dest_netbios_name": netBIOSName,
                         "dest_protocol": protocol,
-                        "dest_port": port,
+                        "dest_port": parseInt(port),
                         "dest_service": serviceName,
                     };
 
